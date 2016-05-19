@@ -9,12 +9,12 @@ module Legends
       @api_key = api_key
     end
 
-    def build_url
-      "https://#{@region.downcase}.api.pvp.net/api/lol/#{@region.downcase}/v1.2/#{@@resource}?api_key=#{@api_key}"
+    def build_url(path : String)
+      "https://#{@region.downcase}.api.pvp.net/api/lol/#{@region.downcase}/v1.2/#{path}?api_key=#{@api_key}"
     end
 
-    def find(id = nil)
-      url = build_url
+    def get(path)
+      url = build_url(path)
       response = HTTP::Client.get(url)
 
       unless response.success?
