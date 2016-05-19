@@ -1,4 +1,3 @@
-require "http/client"
 require "./resource"
 
 
