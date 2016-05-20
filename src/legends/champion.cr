@@ -4,18 +4,14 @@ require "./resource"
 module Legends
 
   class Champion < Resource
-    @@resource = "champion"
+    @resource = "champion"
 
     def find(id = nil)
-      path = resource
+      path = @resource
       if id
         path += "/#{id}"
       end
       get(path)
-    end
-
-    def resource
-      @@resource
     end
 
   end

@@ -3,7 +3,7 @@ require "../../src/legends/**"
 
 
 class DummyResource < Legends::Resource
-  @@resource = "champion"
+  @resource = "champion"
   @region = "BR"
   @api_key = "my_secret"
 end
