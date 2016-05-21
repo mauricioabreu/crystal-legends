@@ -19,7 +19,7 @@ module Legends
       response = HTTP::Client.get(url)
 
       unless response.success?
-        raise Exception.new("Could not terminate the request")
+        raise Exception.new("Could not terminate the request successfully")
       end
 
       @struct.from_json(response.body)
