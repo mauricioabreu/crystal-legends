@@ -1,3 +1,4 @@
+require "json"
 require "http/client"
 
 module Legends
@@ -21,7 +22,7 @@ module Legends
         raise Exception.new("Could not terminate the request")
       end
 
-      puts response.body
+      @struct.from_json(response.body)
 
     end
 
