@@ -22,8 +22,11 @@ module Legends
         raise Exception.new("Could not terminate the request successfully")
       end
 
-      @struct.from_json(response.body)
+      response.body
+    end
 
+    def process_response(data, mapper)
+      mapper.from_json(data)
     end
 
   end
