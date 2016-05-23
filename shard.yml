@@ -1,0 +1,13 @@
+name: legends
+version: 0.0.0
+
+authors:
+  - Maurício Antunes <mauricio.abreua@gmail.com>
+license: MIT
+
+description: |
+   League of Legends API wrapper written in Crystal
+
+development_dependencies:
+  webmock:
+    github: manastech/webmock.cr
