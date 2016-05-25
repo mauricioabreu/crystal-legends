@@ -4,20 +4,20 @@ require "./resource"
 
 module Legends
 
-  class Champion < Resource
+  class ChampionResource < Resource
     @resource = "champion"
 
     def find
-      process_response(get(@resource), ChampionsJSON).champions
+      process_response(get(@resource), Champions).champions
     end
 
     def find(id : Int32)
-      process_response(get(@resource + "/#{id}"), ChampionJSON)
+      process_response(get(@resource + "/#{id}"), Champion)
     end
 
   end
 
-  class ChampionJSON
+  class Champion
 
     JSON.mapping({
       id:                 Int32,
@@ -30,10 +30,10 @@ module Legends
 
   end
 
-  class ChampionsJSON
+  class Champions
 
     JSON.mapping({
-      champions: Array(ChampionJSON),
+      champions: Array(Champion),
     })
 
   end
