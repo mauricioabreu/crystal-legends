@@ -11,7 +11,7 @@ module Legends
     end
 
     def build_url(path : String)
-      "https://#{@region.downcase}.api.pvp.net/api/lol/#{@region.downcase}/v1.2/#{path}?api_key=#{@api_key}"
+      "https://#{@region.downcase}.api.pvp.net/#{path}?api_key=#{@api_key}"
     end
 
     def get(path)
