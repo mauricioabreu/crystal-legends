@@ -6,12 +6,12 @@ module Legends
 
   class ChampionResource < Resource
 
-    def find(region : String, version : String)
+    def find(region : String, version = "v1.2")
       path = get(resource(region, version))
       process_response(get(path), Champions).champions
     end
 
-    def find(region : String, version : String, id : Int32)
+    def find(id : Int32, region : String, version = "v1.2")
       path = get(resource(region, version) + "/#{id}")
       process_response(get(path), Champion)
     end
