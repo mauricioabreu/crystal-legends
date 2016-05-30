@@ -1,5 +1,6 @@
 require "json"
 require "http/client"
+require "uri"
 
 module Legends
 
@@ -10,12 +11,20 @@ module Legends
       @api_key = api_key
     end
 
-    def build_url(path : String)
-      "https://#{@region.downcase}.api.pvp.net/#{path}?api_key=#{@api_key}"
+    def build_url(path : String, query = {} of String => String)
+      url = "https://#{@region.downcase}.api.pvp.net/#{path}?api_key=#{@api_key}"
+      if !query.empty?
+        url = "#{url}&#{build_query(query)}"
+      end
+      url
     end
 
-    def get(path)
-      url = build_url(path)
+    private def build_query(query = {} of String => String)
+      query.to_a.map {|o| "#{o[0]}=#{URI.escape(o[1].to_s)}" }.join("&")
+    end
+
+    def get(path, query = {} of String => String)
+      url = build_url(path, query)
       response = HTTP::Client.get(url)
 
       unless response.success?

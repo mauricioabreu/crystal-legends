@@ -15,10 +15,19 @@ end
 
 describe Legends::Resource do
 
-  describe "#build_url" do
-    it "builds a url for a resource" do
-      DummyResource.new("BR", "my_secret").build_url("v1.4/dummy_path").should eq "https://br.api.pvp.net/v1.4/dummy_path?api_key=my_secret"
+  context "when building an URL" do
+    context "when it has the path to build" do
+      it "builds a URL for a resource" do
+        DummyResource.new("BR", "my_secret").build_url("v1.4/dummy_path").should eq "https://br.api.pvp.net/v1.4/dummy_path?api_key=my_secret"
+      end
     end
+
+    context "when it has a query filter parameters" do
+      it "build a URL for a resource with query string parameters" do
+        DummyResource.new("BR", "my_secret").build_url("v1.4/dummy_path", {:foo => "hello", :bar => "world"}).should eq "https://br.api.pvp.net/v1.4/dummy_path?api_key=my_secret&foo=hello&bar=world"
+      end
+    end
+
   end
 
   describe "#process_response" do
