@@ -6,9 +6,9 @@ module Legends
 
   class ChampionResource < Resource
 
-    def find(region : String, version = "v1.2")
+    def find(region : String, version = "v1.2", query = {} of String => String)
       path = resource(region, version)
-      process_response(get(path), Champions).champions
+      process_response(get(path, query), Champions).champions
     end
 
     def find(id : Int32, region : String, version = "v1.2")
