@@ -1,0 +1,42 @@
+{"champions": [
+   {
+      "botMmEnabled": false,
+      "id": 266,
+      "rankedPlayEnabled": true,
+      "botEnabled": false,
+      "active": true,
+      "freeToPlay": false
+   },
+   {
+      "botMmEnabled": true,
+      "id": 103,
+      "rankedPlayEnabled": true,
+      "botEnabled": false,
+      "active": true,
+      "freeToPlay": false
+   },
+   {
+      "botMmEnabled": true,
+      "id": 84,
+      "rankedPlayEnabled": true,
+      "botEnabled": false,
+      "active": true,
+      "freeToPlay": false
+   },
+   {
+      "botMmEnabled": true,
+      "id": 12,
+      "rankedPlayEnabled": true,
+      "botEnabled": true,
+      "active": true,
+      "freeToPlay": false
+   },
+   {
+      "botMmEnabled": true,
+      "id": 32,
+      "rankedPlayEnabled": true,
+      "botEnabled": true,
+      "active": true,
+      "freeToPlay": false
+   }
+]}
