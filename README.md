@@ -12,6 +12,6 @@ champion = client.champions.find(1, "BR", "v1.2") # finds the champion with ID 1
 puts champion.active # true
 
 # You can also pass a query to filter
-champions = client.champions.find("BR, {"freeToPlay" => "true"})
+champions = client.champions.find("BR", query: {"freeToPlay" => "true"})
 ```
 
