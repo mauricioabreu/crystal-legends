@@ -2,7 +2,7 @@ require "./../spec_helper"
 
 describe Legends::Champion do
 
-  context "when finding a champion" do
+  context "when finding for champions" do
 
     it "finds a champion by id" do
       response = Fixture.load("champion.json")
@@ -12,6 +12,16 @@ describe Legends::Champion do
         champion = Legends::ChampionResource.new("BR", "my_secret_key").find(1, "BR")
         champion.id.should eq 1
         champion.active.should eq true
+      end
+    end
+
+    it "finds all champions" do
+      response = Fixture.load("champions.json")
+      WebMock.wrap do
+        WebMock.stub(:get, "br.api.pvp.net/api/lol/br/v1.2/champion?api_key=my_secret_key").
+          to_return(response)
+        champions = Legends::ChampionResource.new("BR", "my_secret_key").find("BR")
+        champions.should be_a(Array(Legends::Champion))
       end
     end
 
