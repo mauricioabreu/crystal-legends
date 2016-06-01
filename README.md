@@ -2,6 +2,16 @@
 
 League of Legends API wrapper written in Crystal
 
+## Installation
+
+Add the following lines to your `shard.yml` file:
+
+```yaml
+dependencies:
+  legends:
+    github: mauricioabreu/crystal-legends
+```
+
 ## Usage
 
 ```crystal
