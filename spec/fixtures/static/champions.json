@@ -1,0 +1,34 @@
+{
+   "data": {
+      "Aatrox": {
+         "id": 266,
+         "title": "the Darkin Blade",
+         "name": "Aatrox",
+         "key": "Aatrox"
+      },
+      "Thresh": {
+         "id": 412,
+         "title": "the Chain Warden",
+         "name": "Thresh",
+         "key": "Thresh"
+      },
+      "Tryndamere": {
+         "id": 23,
+         "title": "the Barbarian King",
+         "name": "Tryndamere",
+         "key": "Tryndamere"
+      },
+      "Gragas": {
+         "id": 79,
+         "title": "the Rabble Rouser",
+         "name": "Gragas",
+         "key": "Gragas"
+      },
+      "AurelionSol": {
+         "id": 136,
+         "title": "The Star Forger",
+         "name": "Aurelion Sol",
+         "key": "AurelionSol"
+      }
+   }
+}

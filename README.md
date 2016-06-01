@@ -23,5 +23,9 @@ puts champion.active # true
 
 # You can also pass a query to filter
 champions = client.champions.find("BR", query: {"freeToPlay" => "true"})
+
+# If you need static data like the name of a champion
+champion = client.static.champions.find(1)
+puts champion.name # Annie
 ```
 
