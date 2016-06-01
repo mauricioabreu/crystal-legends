@@ -3,7 +3,6 @@ require "http/client"
 require "./champion"
 
 module Legends
-
   # Main class to expose the underlying resources.
   # All resources should be explored like this:
   # ```
@@ -18,7 +17,5 @@ module Legends
       @api_key = api_key
       @champions = ChampionResource.new(region, api_key)
     end
-
   end
-
 end

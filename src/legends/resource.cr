@@ -3,11 +3,9 @@ require "http/client"
 require "uri"
 
 module Legends
-
   # Main model to create a resource.
   # Every endpoint should subclass this.
   class Resource
-
     def initialize(region : String, api_key : String)
       @region = region
       @api_key = api_key
@@ -29,7 +27,7 @@ module Legends
     end
 
     private def build_query(query = {} of String => String)
-      query.to_a.map {|o| "#{o[0]}=#{URI.escape(o[1].to_s)}" }.join("&")
+      query.to_a.map { |o| "#{o[0]}=#{URI.escape(o[1].to_s)}" }.join("&")
     end
 
     # Returns the body of the request.
@@ -49,7 +47,5 @@ module Legends
     def process_response(data, mapper)
       mapper.from_json(data)
     end
-
   end
-
 end
