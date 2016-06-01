@@ -1,6 +1,6 @@
 require "./../spec_helper"
 
-describe Legends::Champion do
+describe Legends::ChampionResource do
 
   context "when finding for champions" do
 
