@@ -1,4 +1,4 @@
-# Crystal Legends
+# Crystal Legends [![Build Status](https://travis-ci.org/mauricioabreu/crystal-legends.svg?branch=master)](https://travis-ci.org/mauricioabreu/crystal-legends)
 
 League of Legends API wrapper written in Crystal
 
