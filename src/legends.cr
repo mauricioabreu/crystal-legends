@@ -1,3 +1,3 @@
-require "../legends/**"
+require "./legends/**"
 
 module Legends; end

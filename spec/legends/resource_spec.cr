@@ -1,7 +1,4 @@
-require "spec"
-require "webmock"
-require "../../src/legends/**"
-
+require "./../spec_helper"
 
 class DummyResource < Legends::Resource
 end
