@@ -11,7 +11,6 @@ class DummyMapping
 end
 
 describe Legends::Resource do
-
   context "when building an URL" do
     context "when it has the path to build" do
       it "builds a URL for a resource" do
@@ -24,7 +23,6 @@ describe Legends::Resource do
         DummyResource.new("BR", "my_secret").build_url("v1.4/dummy_path", {:foo => "hello", :bar => "world"}).should eq "https://br.api.pvp.net/v1.4/dummy_path?api_key=my_secret&foo=hello&bar=world"
       end
     end
-
   end
 
   describe "#process_response" do
@@ -35,13 +33,11 @@ describe Legends::Resource do
     end
   end
 
-
   context "when requesting a resource" do
-
     context "with valid parameters" do
       Spec.before_each do
-        WebMock.stub(:get, "https://br.api.pvp.net/api/lol/br/v1.2/champion/1?api_key=my_secret").
-          to_return(%({"id": 1, "name": "foo"}))
+        WebMock.stub(:get, "https://br.api.pvp.net/api/lol/br/v1.2/champion/1?api_key=my_secret")
+               .to_return(%({"id": 1, "name": "foo"}))
       end
 
       it "returns a JSON response body" do
@@ -49,14 +45,12 @@ describe Legends::Resource do
         response["id"].should eq 1
         response["name"].should eq "foo"
       end
-
     end
 
     context "with invalid parameters" do
-
       Spec.before_each do
-        WebMock.stub(:get, "https://br.api.pvp.net/api/lol/br/v1.2/invalid_path?api_key=my_secret").
-          to_return(status: 500)
+        WebMock.stub(:get, "https://br.api.pvp.net/api/lol/br/v1.2/invalid_path?api_key=my_secret")
+               .to_return(status: 500)
       end
 
       it "raises an exception because the request failed" do
@@ -64,8 +58,6 @@ describe Legends::Resource do
           DummyResource.new("BR", "my_secret").get("invalid_path")
         end
       end
-
     end
   end
-
 end
